@@ -31,8 +31,8 @@ public class EmployeeGUI extends javax.swing.JFrame {
         // Initialise an empty ArrayList
         empList = new ArrayList<Employee>();
         
-        txtSalary.setVisible(false);
-        lblSalary.setVisible(false);
+        txtSalary.setVisible(true);
+        lblSalary.setVisible(true);
         
         txtHours.setVisible(false);
         lblHours.setVisible(false);
@@ -40,8 +40,8 @@ public class EmployeeGUI extends javax.swing.JFrame {
         txtRate.setVisible(false);
         lblRate.setVisible(false);
         
-        txtDepartment.setVisible(false);
-        lblDepartment.setVisible(false);
+        txtDepartment.setVisible(true);
+        lblDepartment.setVisible(true);
         
         txtBudget.setVisible(false);
         lblBudget.setVisible(false);
@@ -105,6 +105,11 @@ public class EmployeeGUI extends javax.swing.JFrame {
         radEmployee.setSelected(true);
         radEmployee.setText("Employee");
         radEmployee.setOpaque(false);
+        radEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radEmployeeActionPerformed(evt);
+            }
+        });
         panel.add(radEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 79, 176, -1));
 
         typeBG.add(radEngineer);
@@ -248,6 +253,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void radEngineerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radEngineerActionPerformed
 
         txtSalary.setVisible(true);
@@ -604,9 +610,25 @@ public class EmployeeGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLoadActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void radEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radEmployeeActionPerformed
+       
+        txtSalary.setVisible(true);
+        lblSalary.setVisible(true);
+        
+        txtDepartment.setVisible(true);
+        lblDepartment.setVisible(true);
+        
+        txtHours.setVisible(false);
+        lblHours.setVisible(false);
+        
+        txtRate.setVisible(false);
+        lblRate.setVisible(false);
+        
+        txtBudget.setVisible(false);
+        lblBudget.setVisible(false);
+        
+    }//GEN-LAST:event_radEmployeeActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
