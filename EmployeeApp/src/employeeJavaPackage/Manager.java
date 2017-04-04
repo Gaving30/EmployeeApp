@@ -35,6 +35,5 @@ public class Manager extends Employee implements Serializable {
     public String getDetails (){
         return super.getDetails() + "\nEmployee Salary:"+salary+
                 "\nDept Name:"+deptName;
-    }
-    
+    }   
 }
