@@ -95,11 +95,11 @@ public class EmployeeGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel.setBackground(new java.awt.Color(102, 204, 255));
+        panel.setBackground(new java.awt.Color(204, 204, 204));
         panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblType.setText("Type");
-        panel.add(lblType, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 79, -1, -1));
+        lblType.setText("Role:");
+        panel.add(lblType, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         typeBG.add(radEmployee);
         radEmployee.setSelected(true);
@@ -110,7 +110,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 radEmployeeActionPerformed(evt);
             }
         });
-        panel.add(radEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 79, 176, -1));
+        panel.add(radEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 176, -1));
 
         typeBG.add(radEngineer);
         radEngineer.setText("Engineer");
@@ -120,7 +120,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 radEngineerActionPerformed(evt);
             }
         });
-        panel.add(radEngineer, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 102, 176, -1));
+        panel.add(radEngineer, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 176, -1));
 
         typeBG.add(radConsultant);
         radConsultant.setText("Consultant");
@@ -130,7 +130,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 radConsultantActionPerformed(evt);
             }
         });
-        panel.add(radConsultant, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 126, 176, -1));
+        panel.add(radConsultant, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 176, -1));
 
         typeBG.add(radManager);
         radManager.setText("Manager");
@@ -140,7 +140,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 radManagerActionPerformed(evt);
             }
         });
-        panel.add(radManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 149, 176, -1));
+        panel.add(radManager, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 176, -1));
 
         typeBG.add(radDirector);
         radDirector.setText("Director");
@@ -150,7 +150,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 radDirectorActionPerformed(evt);
             }
         });
-        panel.add(radDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 172, 176, -1));
+        panel.add(radDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 176, -1));
 
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +158,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 btnAddActionPerformed(evt);
             }
         });
-        panel.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 197, -1, -1));
+        panel.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -174,16 +174,16 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 btnViewAllActionPerformed(evt);
             }
         });
-        panel.add(btnViewAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 197, -1, -1));
+        panel.add(btnViewAll, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
 
         txtSalary.setMaximumSize(new java.awt.Dimension(6, 20));
-        panel.add(txtSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 22, 142, -1));
+        panel.add(txtSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 142, -1));
 
         lblSalary.setText("Salary:");
-        panel.add(lblSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 25, -1, -1));
+        panel.add(lblSalary, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 40, 20));
 
         txtEmployeeId.setMaximumSize(new java.awt.Dimension(6, 20));
-        panel.add(txtEmployeeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 48, 177, -1));
+        panel.add(txtEmployeeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 140, -1));
 
         txtName.setMaximumSize(new java.awt.Dimension(6, 20));
         panel.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 22, 177, -1));
@@ -192,31 +192,31 @@ public class EmployeeGUI extends javax.swing.JFrame {
         panel.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 25, -1, -1));
 
         lblEmployeeId.setText("ID:");
-        panel.add(lblEmployeeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 51, -1, -1));
+        panel.add(lblEmployeeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, -1));
 
         lblHours.setText("Hours:");
-        panel.add(lblHours, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 103, -1, -1));
+        panel.add(lblHours, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, -1));
 
         txtHours.setMaximumSize(new java.awt.Dimension(6, 20));
-        panel.add(txtHours, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 100, 142, -1));
+        panel.add(txtHours, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 142, -1));
 
         lblRate.setText("Rate:");
-        panel.add(lblRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 130, -1, -1));
+        panel.add(lblRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
 
         txtRate.setMaximumSize(new java.awt.Dimension(6, 20));
-        panel.add(txtRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 127, 142, -1));
+        panel.add(txtRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 142, -1));
 
         lblDepartment.setText("Department:");
-        panel.add(lblDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 51, -1, -1));
+        panel.add(lblDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, -1));
 
         txtDepartment.setMaximumSize(new java.awt.Dimension(6, 20));
-        panel.add(txtDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 48, 142, -1));
+        panel.add(txtDepartment, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 142, -1));
 
         lblBudget.setText("Budget:");
-        panel.add(lblBudget, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 77, -1, -1));
+        panel.add(lblBudget, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
 
         txtBudget.setMaximumSize(new java.awt.Dimension(6, 20));
-        panel.add(txtBudget, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 74, 142, -1));
+        panel.add(txtBudget, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 142, -1));
 
         lblDeleteDescription.setText("To delete enter employee Name AND ID: ");
         panel.add(lblDeleteDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 238, -1, -1));
