@@ -551,13 +551,12 @@ public class EmployeeGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-
-        fileLoadChooser = new JFileChooser();
+        
+        fileLoadChooser = new JFileChooser(System.getProperty("user.dir"));
         
         int result = fileLoadChooser.showOpenDialog(panel);
         
-        if(result == JFileChooser.APPROVE_OPTION) {
-            
+        if(result == JFileChooser.APPROVE_OPTION) {    
             ObjectInputStream in = null;
             
             // Clear the ArrayList
@@ -566,13 +565,11 @@ public class EmployeeGUI extends javax.swing.JFrame {
             try {
                 
                 String filePath = fileLoadChooser.getSelectedFile().getAbsolutePath();
-                in = new ObjectInputStream(new FileInputStream(filePath));         
-
+                in = new ObjectInputStream(new FileInputStream(filePath));
                 
                 Employee e;
                 
-                while(true) {
-                    
+                while(true) {    
                     e = (Employee)in.readObject();
                     empList.add(e);
                 }    
@@ -582,7 +579,6 @@ public class EmployeeGUI extends javax.swing.JFrame {
 					// by catching EOFException,
 					// instead of testing for an invalid
 					// return value.
-
                 if(in != null) {
                     
                     try {
@@ -590,7 +586,6 @@ public class EmployeeGUI extends javax.swing.JFrame {
                         in.close();
                     }
                     catch(IOException ex) {
-                        
                          JOptionPane.showMessageDialog(panel, "Close Error: " + ex.getMessage());
                     }      
                 }                       
@@ -632,6 +627,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
+            @Override
             public void run() {
                 new EmployeeGUI().setVisible(true);
             }
