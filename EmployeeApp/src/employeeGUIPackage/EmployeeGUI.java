@@ -31,20 +31,20 @@ public class EmployeeGUI extends javax.swing.JFrame {
         // Initialise an empty ArrayList
         empList = new ArrayList<Employee>();
         
-        txtSalary.setVisible(true);
-        lblSalary.setVisible(true);
+        txtSalary.setEnabled(true);
+        lblSalary.setEnabled(true);
         
-        txtHours.setVisible(false);
-        lblHours.setVisible(false);
+        txtHours.setEnabled(false);
+        lblHours.setEnabled(false);
         
-        txtRate.setVisible(false);
-        lblRate.setVisible(false);
+        txtRate.setEnabled(false);
+        lblRate.setEnabled(false);
         
-        txtDepartment.setVisible(true);
-        lblDepartment.setVisible(true);
+        txtDepartment.setEnabled(true);
+        lblDepartment.setEnabled(true);
         
-        txtBudget.setVisible(false);
-        lblBudget.setVisible(false);
+        txtBudget.setEnabled(false);
+        lblBudget.setEnabled(false);
     }
 
     /** This method is called from within the constructor to
@@ -256,56 +256,56 @@ public class EmployeeGUI extends javax.swing.JFrame {
     
     private void radEngineerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radEngineerActionPerformed
 
-        txtSalary.setVisible(true);
-        lblSalary.setVisible(true);
+        txtSalary.setEnabled(true);
+        lblSalary.setEnabled(true);
         
-        txtHours.setVisible(false);
-        lblHours.setVisible(false);
+        txtHours.setEnabled(false);
+        lblHours.setEnabled(false);
         
-        txtRate.setVisible(false);
-        lblRate.setVisible(false);
+        txtRate.setEnabled(false);
+        lblRate.setEnabled(false);
         
-        txtDepartment.setVisible(false);
-        lblDepartment.setVisible(false);
+        txtDepartment.setEnabled(false);
+        lblDepartment.setEnabled(false);
         
-        txtBudget.setVisible(false);
-        lblBudget.setVisible(false);
+        txtBudget.setEnabled(false);
+        lblBudget.setEnabled(false);
     }//GEN-LAST:event_radEngineerActionPerformed
 
     private void radConsultantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radConsultantActionPerformed
         
-        txtRate.setVisible(true);
-        txtHours.setVisible(true);
+        txtRate.setEnabled(true);
+        txtHours.setEnabled(true);
         
-        lblRate.setVisible(true);
-        lblHours.setVisible(true);
+        lblRate.setEnabled(true);
+        lblHours.setEnabled(true);
         
-        txtSalary.setVisible(false);
-        lblSalary.setVisible(false);
+        txtSalary.setEnabled(false);
+        lblSalary.setEnabled(false);
         
-        txtDepartment.setVisible(false);
-        lblDepartment.setVisible(false);
+        txtDepartment.setEnabled(false);
+        lblDepartment.setEnabled(false);
         
-        txtBudget.setVisible(false);
-        lblBudget.setVisible(false);
+        txtBudget.setEnabled(false);
+        lblBudget.setEnabled(false);
     }//GEN-LAST:event_radConsultantActionPerformed
 
     private void radManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radManagerActionPerformed
 
-        txtSalary.setVisible(true);
-        lblSalary.setVisible(true);
+        txtSalary.setEnabled(true);
+        lblSalary.setEnabled(true);
         
-        txtDepartment.setVisible(true);
-        lblDepartment.setVisible(true);
+        txtDepartment.setEnabled(true);
+        lblDepartment.setEnabled(true);
         
-        txtHours.setVisible(false);
-        lblHours.setVisible(false);
+        txtHours.setEnabled(false);
+        lblHours.setEnabled(false);
         
-        txtRate.setVisible(false);
-        lblRate.setVisible(false);
+        txtRate.setEnabled(false);
+        lblRate.setEnabled(false);
         
-        txtBudget.setVisible(false);
-        lblBudget.setVisible(false);
+        txtBudget.setEnabled(false);
+        lblBudget.setEnabled(false);
     }//GEN-LAST:event_radManagerActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -317,7 +317,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
         
         if(txtEmployeeId.getText().isEmpty()) {
             
-            JOptionPane.showMessageDialog(panel, "You did not enter a name and id");
+            JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter A Name And ID");
             return;
         }
         
@@ -369,20 +369,20 @@ public class EmployeeGUI extends javax.swing.JFrame {
 
     private void radDirectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radDirectorActionPerformed
         
-        txtSalary.setVisible(true);
-        lblSalary.setVisible(true);
+        txtSalary.setEnabled(true);
+        lblSalary.setEnabled(true);
         
-        txtDepartment.setVisible(true);
-        lblDepartment.setVisible(true);
+        txtDepartment.setEnabled(true);
+        lblDepartment.setEnabled(true);
         
-        txtBudget.setVisible(true);
-        lblBudget.setVisible(true);
+        txtBudget.setEnabled(true);
+        lblBudget.setEnabled(true);
         
-        txtHours.setVisible(false);
-        lblHours.setVisible(false);
+        txtHours.setEnabled(false);
+        lblHours.setEnabled(false);
         
-        txtRate.setVisible(false);
-        lblRate.setVisible(false);
+        txtRate.setEnabled(false);
+        lblRate.setEnabled(false);
 }//GEN-LAST:event_radDirectorActionPerformed
 
     private void btnViewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewAllActionPerformed
@@ -396,7 +396,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
         
         if(empCount == 0) {
             
-            JOptionPane.showMessageDialog(panel, "Nothing to show");
+            JOptionPane.showMessageDialog(panel, "No Records To Show");
             return;
         }
         
@@ -448,7 +448,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
         
         Employee e;
         if (name.equals("") && id.equals("")){
-            JOptionPane.showMessageDialog(panel, "You did not enter a name or id");
+            JOptionPane.showMessageDialog(panel, "To Search Users You Must Enter A Name Or An ID");
         } else {
             empCount = empList.size();
             
@@ -486,42 +486,40 @@ public class EmployeeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = txtName.getText();
         String id = txtEmployeeId.getText();
-        int deleteIndex = -1;
+        
+        //int deleteIndex = -1;
+        
         Employee e;
         
         if (name.equals("") || id.equals("")){
-            JOptionPane.showConfirmDialog(panel, "Enter name and id to delete!!");
-            
+            JOptionPane.showMessageDialog(panel, "To Delete A User You Must Enter A Name And ID!");
         } else {
             for (int i=0; i<empCount; i++){
                    
                 //e = emp[i];
-                   e = empList.get(i);
-                   
-                   
-                   if (name.equals(e.getName()) && Integer.parseInt(id) == e.getEmpId()){
-                       
-                       //emp[i] = emp[empCount-1];
-                       //emp[empCount-1] = null;
-                       //empCount--;
-                       empList.remove(i);
-                       empCount = empList.size();
-                       
-                       JOptionPane.showMessageDialog(panel, "Deleting: "+e.getName()+", "+e.getEmpId()+" from array"
-                                + "There are " + empCount + " staff members left");
-                       break;
-                   }
+                e = empList.get(i);
+
+                if (name.equals(e.getName()) && Integer.parseInt(id) == e.getEmpId()){
+
+                    //emp[i] = emp[empCount-1];
+                    //emp[empCount-1] = null;
+                    //empCount--;
+                    empList.remove(i);
+                    empCount = empList.size();
+
+                    JOptionPane.showMessageDialog(panel, "Deleting: "+e.getName()+", "+e.getEmpId()+" from array"
+                             + "There are " + empCount + " staff members left");
+                    break;
+                }
             }
-        }
-            
+        }   
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         
-        fileSaveChooser = new JFileChooser();
+        fileSaveChooser = new JFileChooser(System.getProperty("user.dir"));
         
         int result = fileSaveChooser.showSaveDialog(panel);
-        
         
         if(result == JFileChooser.APPROVE_OPTION) {
             
@@ -532,20 +530,22 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 String filePath = fileSaveChooser.getSelectedFile().getAbsolutePath();
                 out = new ObjectOutputStream(new FileOutputStream(filePath));
                 
-                for(int i = 0; i < empList.size(); i++) {
+                if (empList.isEmpty()){    
                     
-                    out.writeObject(empList.get(i));
+                    JOptionPane.showMessageDialog(panel, "There Are No Records To Save");
+                    
+                } else {
+                    for(int i = 0; i < empList.size(); i++) {
+                        out.writeObject(empList.get(i));
+                        
+                        JOptionPane.showMessageDialog(panel, "Information Saved To File Successfully");
+                    }
                 }
-                
                 out.close();
             }
             catch(IOException ex) {
                 
                 JOptionPane.showMessageDialog(panel, "Save Error: " + ex.getMessage());
-            }
-            finally {
-                
-                JOptionPane.showMessageDialog(panel, "Information saved OK");
             }
         }
     }//GEN-LAST:event_btnSaveActionPerformed
@@ -574,10 +574,8 @@ public class EmployeeGUI extends javax.swing.JFrame {
                     empList.add(e);
                 }    
             }
-            catch (EOFException eofEx) {// Notice that ObjectInputStream 						
-                                        // detects an end-of-file condition
-					// by catching EOFException,
-					// instead of testing for an invalid
+            catch (EOFException eofEx) {// Notice that ObjectInputStream detects an end-of-file condition
+					// by catching EOFException, instead of testing for an invalid
 					// return value.
                 if(in != null) {
                     
@@ -607,20 +605,20 @@ public class EmployeeGUI extends javax.swing.JFrame {
 
     private void radEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radEmployeeActionPerformed
        
-        txtSalary.setVisible(true);
-        lblSalary.setVisible(true);
+        txtSalary.setEnabled(true);
+        lblSalary.setEnabled(true);
         
-        txtDepartment.setVisible(true);
-        lblDepartment.setVisible(true);
+        txtDepartment.setEnabled(true);
+        lblDepartment.setEnabled(true);
         
-        txtHours.setVisible(false);
-        lblHours.setVisible(false);
+        txtHours.setEnabled(false);
+        lblHours.setEnabled(false);
         
-        txtRate.setVisible(false);
-        lblRate.setVisible(false);
+        txtRate.setEnabled(false);
+        lblRate.setEnabled(false);
         
-        txtBudget.setVisible(false);
-        lblBudget.setVisible(false);
+        txtBudget.setEnabled(false);
+        lblBudget.setEnabled(false);
         
     }//GEN-LAST:event_radEmployeeActionPerformed
 
