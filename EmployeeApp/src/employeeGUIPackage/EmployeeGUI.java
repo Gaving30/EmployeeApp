@@ -166,7 +166,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        panel.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 263, -1, -1));
+        panel.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         btnViewAll.setText("View All");
         btnViewAll.addActionListener(new java.awt.event.ActionListener() {
@@ -246,7 +246,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 btnLoadActionPerformed(evt);
             }
         });
-        panel.add(btnLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
+        panel.add(btnLoad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
 
         getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 360));
 
@@ -315,34 +315,50 @@ public class EmployeeGUI extends javax.swing.JFrame {
         double salary, rate, budget;
         Employee e;
         
-        if(txtEmployeeId.getText().isEmpty()) {
+        if(txtName.getText().isEmpty() ) {
             
-            JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter A Name And ID");
+            JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter A Name");
             return;
+        }
+        
+        if(txtEmployeeId.getText().isEmpty()){            
+            JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter An ID");
+            return;
+            
         }
         
         name = txtName.getText();
         empid = Integer.parseInt(txtEmployeeId.getText());
         
+        if (empid != (int)empid){
+            JOptionPane.showMessageDialog(panel, "Please Enter A Valid Numeric ID");
+            return;
+        }
+        
         if (radEmployee.isSelected()){
             type="Employee";
+            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
             e = new Employee (name, empid);
         }else if (radEngineer.isSelected()){
             type="Engineer";
+            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
             salary = Double.parseDouble(txtSalary.getText());
             e = new Engineer (name, empid, salary);
         }else if (radConsultant.isSelected()){
             type="Consultant";
+            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
             rate = Double.parseDouble(txtRate.getText());
             hours = Integer.parseInt(txtHours.getText());
             e = new Consultant (name, empid, hours, rate);
         }else if (radManager.isSelected()){
             type="Manager";
+            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
             salary = Double.parseDouble(txtSalary.getText());
             dept = txtDepartment.getText();
             e = new Manager(name, empid, salary, dept);
         }else if (radDirector.isSelected()){
             type ="Director";  
+            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
             salary = Double.parseDouble(txtSalary.getText());
             dept = txtDepartment.getText();
             budget = Double.parseDouble(txtBudget.getText());
@@ -351,6 +367,7 @@ public class EmployeeGUI extends javax.swing.JFrame {
             type = null;
             e = new Employee(name, empid);
         }
+        
         txtName.setText("");
         txtEmployeeId.setText("");
         txtSalary.setText("");
@@ -493,6 +510,8 @@ public class EmployeeGUI extends javax.swing.JFrame {
         
         if (name.equals("") || id.equals("")){
             JOptionPane.showMessageDialog(panel, "To Delete A User You Must Enter A Name And ID!");
+        } else if (empCount == 0){
+            JOptionPane.showMessageDialog(panel, "There Are No Employees In List, Have You Loaded A File!");
         } else {
             for (int i=0; i<empCount; i++){
                    
@@ -510,6 +529,8 @@ public class EmployeeGUI extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(panel, "Deleting: "+e.getName()+", "+e.getEmpId()+" from array"
                              + "There are " + empCount + " staff members left");
                     break;
+                } else {
+                    JOptionPane.showMessageDialog(panel, "No User Found Using That Name And ID");                    
                 }
             }
         }   
