@@ -17,12 +17,11 @@ import javax.swing.JOptionPane;
  */
 public class EmployeeGUI extends javax.swing.JFrame {
 
-    //Employee emp;
     ArrayList<Employee> empList;
 
     int empCount = 0;
 
-    /** Creates new form EmployeeGUI */
+    // Creates new form EmployeeGUI
     public EmployeeGUI() {
         initComponents();
         
@@ -311,22 +310,10 @@ public class EmployeeGUI extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         
         String name, type, dept;
-        int empid, hours;
+        int hours, empid;
         double salary, rate, budget;
         Employee e;
-        
-        if(txtName.getText().isEmpty() ) {
-            
-            JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter A Name");
-            return;
-        }
-        
-        if(txtEmployeeId.getText().isEmpty()){            
-            JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter An ID");
-            return;
-            
-        }
-        
+
         name = txtName.getText();
         empid = Integer.parseInt(txtEmployeeId.getText());
         
@@ -335,37 +322,83 @@ public class EmployeeGUI extends javax.swing.JFrame {
             return;
         }
         
+        int foo;
+        String StringThatCouldBeANumberOrNot = "26263Hello"; //will throw exception
+        String StringThatCouldBeANumberOrNot2 = "26263"; //will not throw exception
+        
+        try {
+            
+            foo = Integer.parseInt(StringThatCouldBeANumberOrNot);
+            foo = Integer.parseInt(StringThatCouldBeANumberOrNot2);
+        
+        } catch (NumberFormatException ex) {
+        
+
+        }
+        
+        JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter A Name And ID");       
+        JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter A Name And ID");
+        
         if (radEmployee.isSelected()){
             type="Employee";
-            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
+
+            if((txtName.getText().isEmpty())&& (txtEmployeeId.getText().isEmpty())) {
+                JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter A Name And ID");
+                return;
+            }
+
+            if(txtName.getText().isEmpty() ) {
+                JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter A Name");
+                return;
+            } else {
+            }
+
+            if(txtEmployeeId.getText().isEmpty()){            
+                JOptionPane.showMessageDialog(panel, "To Add A New User You Must Enter An ID");
+                return;
+            }
+        
+            
+            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter \nA Name \nAn ID");
             e = new Employee (name, empid);
+            
         }else if (radEngineer.isSelected()){
+            
             type="Engineer";
-            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
+            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter \nA Name \nAn ID \nA Salary");
             salary = Double.parseDouble(txtSalary.getText());
             e = new Engineer (name, empid, salary);
+            
         }else if (radConsultant.isSelected()){
+            
             type="Consultant";
-            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
+            JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter \nA Name \nAn ID");
             rate = Double.parseDouble(txtRate.getText());
             hours = Integer.parseInt(txtHours.getText());
             e = new Consultant (name, empid, hours, rate);
+        
         }else if (radManager.isSelected()){
+        
             type="Manager";
             JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
             salary = Double.parseDouble(txtSalary.getText());
             dept = txtDepartment.getText();
             e = new Manager(name, empid, salary, dept);
+        
         }else if (radDirector.isSelected()){
+        
             type ="Director";  
             JOptionPane.showMessageDialog(panel, "To Add A New " + type + " You Must Enter A Name And ID");
             salary = Double.parseDouble(txtSalary.getText());
             dept = txtDepartment.getText();
             budget = Double.parseDouble(txtBudget.getText());
             e = new Director (name, empid, salary, dept, budget);
+        
         }else{
+        
             type = null;
             e = new Employee(name, empid);
+        
         }
         
         txtName.setText("");
@@ -377,8 +410,6 @@ public class EmployeeGUI extends javax.swing.JFrame {
         txtBudget.setText(""); 
 
         JOptionPane.showMessageDialog(panel, "Success Adding " + name + " to Employee list");
-        //emp = e;
-        //empCount++;
         
         // Add a new element to the Array List
         empList.add(e);
@@ -419,7 +450,6 @@ public class EmployeeGUI extends javax.swing.JFrame {
         
         for (int i=0; i < empCount; i++){
             
-            //e = emp[i];
             e = empList.get(i);
 
             name = e.getName();
@@ -471,7 +501,6 @@ public class EmployeeGUI extends javax.swing.JFrame {
             
             for (int i=0; i<empCount; i++){
                 
-                //e = emp[i];
                 e = empList.get(i);
                 
                 if (name.equals(e.getName()) || Integer.parseInt(id) == e.getEmpId()){
@@ -500,11 +529,9 @@ public class EmployeeGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+        
         String name = txtName.getText();
         String id = txtEmployeeId.getText();
-        
-        //int deleteIndex = -1;
         
         Employee e;
         
@@ -515,14 +542,10 @@ public class EmployeeGUI extends javax.swing.JFrame {
         } else {
             for (int i=0; i<empCount; i++){
                    
-                //e = emp[i];
                 e = empList.get(i);
 
                 if (name.equals(e.getName()) && Integer.parseInt(id) == e.getEmpId()){
 
-                    //emp[i] = emp[empCount-1];
-                    //emp[empCount-1] = null;
-                    //empCount--;
                     empList.remove(i);
                     empCount = empList.size();
 
@@ -540,6 +563,13 @@ public class EmployeeGUI extends javax.swing.JFrame {
         
         fileSaveChooser = new JFileChooser(System.getProperty("user.dir"));
         
+        if (empList.isEmpty()){
+        
+            JOptionPane.showMessageDialog(panel, "There Are No Records To Save");
+            return;
+            
+        }
+        
         int result = fileSaveChooser.showSaveDialog(panel);
         
         if(result == JFileChooser.APPROVE_OPTION) {
@@ -551,17 +581,13 @@ public class EmployeeGUI extends javax.swing.JFrame {
                 String filePath = fileSaveChooser.getSelectedFile().getAbsolutePath();
                 out = new ObjectOutputStream(new FileOutputStream(filePath));
                 
-                if (empList.isEmpty()){    
-                    
-                    JOptionPane.showMessageDialog(panel, "There Are No Records To Save");
-                    
-                } else {
-                    for(int i = 0; i < empList.size(); i++) {
-                        out.writeObject(empList.get(i));
+                for(int i = 0; i < empList.size(); i++) {
+                    out.writeObject(empList.get(i));
                         
-                        JOptionPane.showMessageDialog(panel, "Information Saved To File Successfully");
-                    }
+                    JOptionPane.showMessageDialog(panel, "Information Saved To File Successfully");
+                   
                 }
+                
                 out.close();
             }
             catch(IOException ex) {
